@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.monochromeroad.flr.api.greeting";
+
+package greeting;
+
+service GreetingService {
+  rpc Greet (Greeting) returns (Greeting) {}
+}
+
+message Greeting {
+  enum Type {
+    MORNING = 0;
+    AFTERNOON = 1;
+    EVENING = 2;
+    NIGHT = 3;
+    MIDNIGHT = 4;
+  }
+
+  string name = 1;
+  string message = 2;
+
+  Type requestType = 3;
+  Type responseType = 4;
+}
