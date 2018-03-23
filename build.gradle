@@ -1,20 +1,21 @@
 buildscript {
   repositories {
-    jcenter()
+    maven {
+        url "https://repo.spring.io/plugins-release/"
+    }
+    mavenCentral()
   }
   dependencies {
     classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.10.RELEASE"
+    classpath 'io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE'
+    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.5'
   }
 }
 
-plugins {
-    id 'java'
-    id 'application'
-    id "com.google.protobuf" version "0.8.5"
-    id "io.spring.dependency-management" version "1.0.4.RELEASE"
-}
-
+apply plugin: "java"
+apply plugin: "application"
 apply plugin: "org.springframework.boot"
+apply plugin: "com.google.protobuf"
 
 ext {
     grpcVersion = "1.10.0"
@@ -33,8 +34,8 @@ repositories {
     maven {
         url "https://maven.repository.redhat.com/earlyaccess/all"
     }
-    jcenter()
    	mavenCentral()
+    jcenter()
 }
 
 dependencies {
