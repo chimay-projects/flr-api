@@ -78,3 +78,7 @@ protobuf {
 springBoot {
   executable = true
 }
+
+jar {
+    archiveName = "app.jar"
+}
