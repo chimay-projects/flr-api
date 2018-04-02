@@ -13,7 +13,7 @@ public class GreetingService extends GreetingServiceGrpc.GreetingServiceImplBase
         Greeting reply = Greeting.newBuilder().
             setResponseType(Greeting.Type.NIGHT).
             setRequestType(Greeting.Type.NIGHT).
-            setMessage("Hello, " + request.getName()).
+            setMessage("Hello Hello, " + request.getName()).
             build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
